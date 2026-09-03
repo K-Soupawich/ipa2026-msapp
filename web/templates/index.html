@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Sample app</title>
+    <title>Routers</title>
     <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
     <h1>Routers List</h1>
     {% for router in routers %}
       <li>
-	       {{ router.ip }} - {{ router.username }}	 
+	       <a href="{{ url_for('router_detail', ip=router.ip)}}">{{ router.ip }}</a> - {{ router.username }}	 
          <form method="POST" action="{{ url_for('delete_router', id=router._id)}}" style="display:inline">
            <button type="submit">Delete</button>
          </form>
