@@ -39,7 +39,9 @@ def delete_router(id):
 @app.route("/router_detail/<ip>", methods=["GET"])
 def router_detail(ip):
     return render_template(
-        "router_detail.html", ip=ip, record=list(interfaces.find({"router_ip": ip}))
+        "router_detail.html",
+        ip=ip,
+        record=list(interfaces.find({"router_ip": ip}))[-5:],
     )
 
 
