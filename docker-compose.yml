@@ -9,6 +9,9 @@ services:
       - app-net
     env_file:
       - .env
+    environment:
+      MONGO_URI: "mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/"
+      DB_NAME: "ipa2026_db"
 
   mongo:
     image: mongo:6
@@ -41,6 +44,8 @@ services:
     env_file:
       - .env
     environment:
+      MONGO_URI: "mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/"
+      DB_NAME: "ipa2026_db"
       PYTHONUNBUFFERED: 1
 
   worker:
