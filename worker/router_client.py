@@ -14,6 +14,7 @@ def get_interfaces(ip, username, password):
         "username": username,
         "password": password,
         "session_log": "netmiko_session.log",
+        "disabled_algorithms": {"pubkeys": []},
     }
 
     with ConnectHandler(**device) as conn:
@@ -21,7 +22,3 @@ def get_interfaces(ip, username, password):
         conn.disconnect()
 
     return result
-
-
-if __name__ == "__main__":
-    get_interfaces()
