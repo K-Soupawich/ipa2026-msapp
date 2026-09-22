@@ -3,13 +3,12 @@ import time
 import pika
 from callback import callback
 
-host = os.getenv("RABBITMQ_HOST")
 user = os.getenv("RABBITMQ_DEFAULT_USER")
 pwd = os.getenv("RABBITMQ_DEFAULT_PASS")
 
 
 def consume(host):
-    print(host, user, pwd)
+    # print(host, user, pwd)
     for attempt in range(10):
         try:
             print(f"Connecting to RabbitMQ (try {attempt})...")
@@ -33,4 +32,4 @@ def consume(host):
 
 
 if __name__ == "__main__":
-    consume(host)
+    consume(rabbitmq)
