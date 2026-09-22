@@ -13,7 +13,7 @@ def get_interfaces(ip, username, password):
         "host": ip,
         "username": username,
         "password": password,
-        "ssh_config_file": True,
+        "ssh_config_file": "/root/.ssh/config",
     }
 
     with ConnectHandler(**device) as conn:
