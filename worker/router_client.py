@@ -13,8 +13,7 @@ def get_interfaces(ip, username, password):
         "host": ip,
         "username": username,
         "password": password,
-        "session_log": "netmiko_session.log",
-        "disabled_algorithms": {"pubkeys": [], "kex": []},
+        "ssh_config_file": True,
     }
 
     with ConnectHandler(**device) as conn:
