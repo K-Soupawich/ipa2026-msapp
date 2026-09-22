@@ -16,8 +16,10 @@ interfaces = db["interface_status"]
 
 @app.route("/")
 def main():
-    return render_template("index.html",
-    routers=list(routers.find()))
+    return render_template(
+        "index.html",
+        routers=list(routers.find())
+    )
 
 
 @app.route("/add", methods=["POST"])

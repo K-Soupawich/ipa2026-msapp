@@ -9,8 +9,8 @@ def produce(host, body):
     credentials = pika.PlainCredentials(user, password)
     connection = pika.BlockingConnection(
         pika.ConnectionParameters(
-        host=host,
-        credentials=credentials)
+            host=host,
+            credentials=credentials)
     )
     channel = connection.channel()
 
