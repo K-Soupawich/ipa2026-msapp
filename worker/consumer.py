@@ -9,6 +9,7 @@ pwd = os.getenv("RABBITMQ_DEFAULT_PASS")
 
 
 def consume(host):
+    print(host, user, pwd)
     for attempt in range(10):
         try:
             print(f"Connecting to RabbitMQ (try {attempt})...")
