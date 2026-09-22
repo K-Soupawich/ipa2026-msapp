@@ -13,7 +13,7 @@ def get_interfaces(ip, username, password):
         "host": ip,
         "username": username,
         "password": password,
-        "ssh_config_file": "/root/.ssh/config",
+        "disabled_algorithms": {"pubkeys": ["rsa-sha2-256", "rsa-sha2-512"]},
     }
 
     with ConnectHandler(**device) as conn:
