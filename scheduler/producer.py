@@ -1,8 +1,8 @@
 import pika
 import os
 
-user = os.environ.get("RABBITMQ_USER")
-password = os.environ.get("RABBITMQ_PASS")
+user = os.environ.get("RABBITMQ_DEFAULT_USER")
+password = os.environ.get("RABBITMQ_DEFAULT_PASS")
 
 
 def produce(host, body):
