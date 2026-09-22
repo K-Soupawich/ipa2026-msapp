@@ -13,6 +13,7 @@ def get_interfaces(ip, username, password):
         "host": ip,
         "username": username,
         "password": password,
+        "session_log": "netmiko_session.log",
     }
 
     with ConnectHandler(**device) as conn:
